@@ -1,12 +1,26 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import CardFlip from "../components/FreeComponents/CardFlip.vue";
+import CardHover from "../components/FreeComponents/CardHover.vue";
+import CardSlide from "../components/FreeComponents/CardSl.vue";
+import CheckBoxCircle from "../components/FreeComponents/CheckBoxCircle.vue";
 import GeoLoading from "../components/FreeComponents/GeoLoading.vue";
 import Geos from "../components/FreeComponents/Geos.vue";
 import HoverText from "../components/FreeComponents/HoverText.vue";
 import InfiniteLoading from "../components/FreeComponents/InfiniteLoading.vue";
+import Input from "../components/FreeComponents/Input.vue";
+import List from "../components/FreeComponents/List.vue";
 import MagicMenu from "../components/FreeComponents/MagicMenu.vue";
 import Push from "../components/FreeComponents/Push.vue";
-const menuItems = ["MagicMenu", "Loadings", "Text's", "Portfolio", "Contact"];
+const menuItems = [
+  "MagicMenu",
+  "Loadings",
+  "Texts",
+  "Cards",
+  "Inputs",
+  "Checkbox",
+  "List",
+];
 const activeItem = ref(-1);
 
 const handleItemClick = (index: number) => {
@@ -48,6 +62,25 @@ const handleItemClick = (index: number) => {
 
       <div v-if="activeItem === 2">
         <Push />
+      </div>
+      <div v-if="activeItem === 3">
+        <CardHover />
+      </div>
+      <div v-if="activeItem === 3">
+        <CardFlip />
+      </div>
+      <div v-if="activeItem === 3">
+        <CardSlide />
+      </div>
+
+      <div v-if="activeItem === 4">
+        <Input />
+      </div>
+      <div v-if="activeItem === 5">
+        <CheckBoxCircle />
+      </div>
+      <div v-if="activeItem === 6">
+        <List />
       </div>
     </div>
   </div>
